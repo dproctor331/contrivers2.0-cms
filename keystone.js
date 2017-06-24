@@ -10,8 +10,8 @@ var keystone = require('keystone');
 // and documentation.
 
 keystone.init({
-	'name': 'blah',
-	'brand': 'blah',
+	'name': 'Contrivers Content Management',
+	'brand': 'Contrivers Content Management',
 
 	'sass': 'public',
 	'static': 'public',
@@ -24,7 +24,7 @@ keystone.init({
 	'auto update': true,
 	'session': true,
 	'auth': true,
-	'user model': 'User',
+	'user model': 'Contributor',
 });
 
 // Load your project's Models

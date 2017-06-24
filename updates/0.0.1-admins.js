@@ -8,8 +8,8 @@
  */
 
 exports.create = {
-	User: [
-		{ 'name.first': 'Admin', 'name.last': 'User', 'email': 'danielproctor@web.de', 'password': 'ch4ng3m3', 'isAdmin': true },
+	Contributor: [
+		{ 'name.first': 'Admin', 'name.last': 'Contributor', 'email': 'danielproctor@web.de', 'password': 'ch4ng3m3', 'isAdmin': true },
 	],
 };
 
@@ -19,15 +19,15 @@ exports.create = {
 
 var keystone = require('keystone');
 var async = require('async');
-var User = keystone.list('User');
+var Contributor = keystone.list('Contributor');
 
 var admins = [
-	{ email: 'user@keystonejs.com', password: 'admin', name: { first: 'Admin', last: 'User' } }
+	{ email: 'user@keystonejs.com', password: 'admin', name: { first: 'Admin', last: 'Contributor' } }
 ];
 
 function createAdmin (admin, done) {
 
-	var newAdmin = new User.model(admin);
+	var newAdmin = new Contributor.model(admin);
 
 	newAdmin.isAdmin = true;
 	newAdmin.save(function (err) {

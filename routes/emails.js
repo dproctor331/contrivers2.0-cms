@@ -23,15 +23,15 @@ module.exports = {
 		var Enquiry = keystone.list('Enquiry');
 
 		var newEnquiry = new Enquiry.model({
-			name: { first: 'Test', last: 'User' },
-			email: 'contact@blah.com',
+			name: { first: 'Test', last: 'Contributor' },
+			email: 'contact@Contrivers.com',
 			phone: '+61 2 1234 5678',
 			enquiryType: 'message',
 			message: { md: 'Nice enquiry notification.' },
 		});
 
 		callback(null, {
-			admin: 'Admin User',
+			admin: 'Admin Contributor',
 			enquiry: newEnquiry,
 			enquiry_url: '/keystone/enquiries/',
 		});

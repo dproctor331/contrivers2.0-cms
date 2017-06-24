@@ -52,7 +52,7 @@ Enquiry.schema.methods.sendNotificationEmail = function (callback) {
 	var enquiry = this;
 	var brand = keystone.get('brand');
 
-	keystone.list('User').model.find().where('isAdmin', true).exec(function (err, admins) {
+	keystone.list('Contributor').model.find().where('isAdmin', true).exec(function (err, admins) {
 		if (err) return callback(err);
 		new keystone.Email({
 			templateName: 'enquiry-notification',
@@ -60,10 +60,10 @@ Enquiry.schema.methods.sendNotificationEmail = function (callback) {
 		}).send({
 			to: admins,
 			from: {
-				name: 'blah',
-				email: 'contact@blah.com',
+				name: 'Contrivers Content Management',
+				email: 'contact@Contrivers.com',
 			},
-			subject: 'New Enquiry for blah',
+			subject: 'New Enquiry for Contrivers Content Management',
 			enquiry: enquiry,
 			brand: brand,
 		}, callback);

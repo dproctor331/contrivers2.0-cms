@@ -18,10 +18,13 @@ Post.add({
 	publishedDate: { type: Types.Date, index: true, dependsOn: { state: 'published' } },
 	image: { type: Types.CloudinaryImage },
 	content: {
-		brief: { type: Types.Html, wysiwyg: true, height: 150 },
+		abstract: { type: Types.Html, wysiwyg: true, height: 150 },
 		extended: { type: Types.Html, wysiwyg: true, height: 400 },
 	},
-	categories: { type: Types.Relationship, ref: 'PostCategory', many: true },
+	contentType: { type: Types.Select, options: 'essay, book review, interview', default: 'essay', index: true },
+	featured: { type: Boolean, label: 'Featured', index: true },
+	hidden: { type: Boolean, label: 'Hidden', index: true },
+	tags: { type: Types.TextArray },
 });
 
 Post.schema.virtual('content.full').get(function () {

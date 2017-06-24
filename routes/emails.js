@@ -23,7 +23,7 @@ module.exports = {
 		var Enquiry = keystone.list('Enquiry');
 
 		var newEnquiry = new Enquiry.model({
-			name: { first: 'Test', last: 'Contributor' },
+			name: { first: 'Test', last: 'User' },
 			email: 'contact@Contrivers.com',
 			phone: '+61 2 1234 5678',
 			enquiryType: 'message',
@@ -31,7 +31,7 @@ module.exports = {
 		});
 
 		callback(null, {
-			admin: 'Admin Contributor',
+			admin: 'Admin User',
 			enquiry: newEnquiry,
 			enquiry_url: '/keystone/enquiries/',
 		});

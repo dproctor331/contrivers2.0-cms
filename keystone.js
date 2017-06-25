@@ -10,8 +10,8 @@ var keystone = require('keystone');
 // and documentation.
 
 keystone.init({
-	'name': 'Contrivers Content Management',
-	'brand': 'Contrivers Content Management',
+	'name': "Contrivers' Content Management",
+	'brand': "Contrivers' Content Management",
 
 	'sass': 'public',
 	'static': 'public',

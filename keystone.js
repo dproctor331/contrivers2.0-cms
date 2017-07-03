@@ -49,8 +49,8 @@ keystone.set('mongo', process.env.MONGO_URI || 'mongodb://api:api@ds137882.mlab.
 
 // Start Keystone to connect to your database and initialise the web server
 keystone.set('nav', {
-    'users': 'User',
-    'content': ['posts']
+	users: 'User',
+	content: ['posts'],
 });
 
 if (!process.env.MAILGUN_API_KEY || !process.env.MAILGUN_DOMAIN) {

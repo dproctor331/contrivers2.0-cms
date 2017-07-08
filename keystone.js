@@ -4,6 +4,7 @@ require('dotenv').config();
 
 // Require keystone
 var keystone = require('keystone');
+var handlebars = require('express-handlebars');
 
 // Initialise Keystone with your project's configuration.
 // See http://keystonejs.com/guide/config for available options
@@ -17,7 +18,15 @@ keystone.init({
 	'static': 'public',
 	'favicon': 'public/favicon.ico',
 	'views': 'templates/views',
-	'view engine': 'hbs',
+	'view engine': '.hbs',
+
+	'custom engine': handlebars.create({
+		layoutsDir: 'templates/views/layouts',
+		partialsDir: 'templates/views/partials',
+		defaultLayout: 'default',
+		helpers: new require('./templates/views/helpers')(),
+		extname: '.hbs',
+	}).engine,
 
 	'emails': 'templates/emails',
 
@@ -49,8 +58,10 @@ keystone.set('mongo', process.env.MONGO_URI || 'mongodb://api:api@ds137882.mlab.
 
 // Start Keystone to connect to your database and initialise the web server
 keystone.set('nav', {
-	users: 'User',
-	content: ['posts'],
+	galleries: 'galleries',
+	enquiries: 'enquiries',
+	users: 'users',
+	content: ['posts']
 });
 
 if (!process.env.MAILGUN_API_KEY || !process.env.MAILGUN_DOMAIN) {

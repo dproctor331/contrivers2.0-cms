@@ -1,3 +1,43 @@
+
+# Contrivers
+
+This project is a reworking of the contrivers.org website using only the nodejs and angular.
+
+## Installation
+
+The following are required for installation:
+
+- [NodeJS](https://nodejs.org/en/) (0.12 or greater)
+- [Git](https://git-scm.com/)
+
+Once installed, clone this repo...
+
+```bash
+git clone https://github.com/dproctor331/contrivers2.0.git
+```
+
+Install the package/dependencies...
+
+```bash
+npm install 
+bower install
+```
+
+## Usage
+
+Run `npm start` to run Gulp. Your finished site will be created in a folder called `dist`, viewable at this URL:
+
+```
+http://localhost:8000
+```
+
+To create compressed, production-ready assets, run `npm run build`.
+
+## Notes/Acknowledgements
+
+This project was created using Foundation-Sites, so much of the advanced features and functionalities were developed by the good folks over at Zurb. See Foundation 6 docs for detailed information about Foundation Sites and the cool stuff it does.
+
+
 # Ngtest
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.4.

@@ -15,7 +15,7 @@ keystone.init({
 	'brand': "Contrivers' Content Management",
 
 	'sass': 'public',
-	'static': 'public',
+	'static': ['public', 'dist'],
 	'favicon': 'public/favicon.ico',
 	'views': 'templates/views',
 	'view engine': '.hbs',
@@ -52,6 +52,7 @@ keystone.set('locals', {
 // Load your project's Routes
 keystone.set('routes', require('./routes'));
 
+keystone.redirect('/', '/index.html')
 
 // Configure the navigation bar in Keystone's Admin UI
 keystone.set('mongo', process.env.MONGO_URI || 'mongodb://api:api@ds137882.mlab.com:37882/contrivers');
@@ -61,7 +62,7 @@ keystone.set('nav', {
 	galleries: 'galleries',
 	enquiries: 'enquiries',
 	users: 'users',
-	content: ['posts']
+	content: ['posts'],
 });
 
 if (!process.env.MAILGUN_API_KEY || !process.env.MAILGUN_DOMAIN) {
